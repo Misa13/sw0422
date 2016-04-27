@@ -30,6 +30,8 @@
 /* Anagram Game Application */
 
 package com.toy.anagrams.lib;
+import java.lang.Object;
+import java.util.Arrays;
 
 /**
  * Implementation of the logic for the Anagram Game application.
@@ -167,7 +169,11 @@ final class StaticWordLibrary extends WordLibrary {
      * @return word at that index in its scrambled form
      */
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
+    	char [] scrambledArray = WORD_LIST[idx].toCharArray();
+    	Arrays.sort(scrambledArray);
+    	String s_word = String.valueOf(scrambledArray);
+    	return s_word;
+        //return SCRAMBLED_WORD_LIST[idx];
     }
 
     /**
